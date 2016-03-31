@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 
+<<<<<<< HEAD
 RUN apt-get install -y --no-install-recommends libdbus-glib-1-2 \
                        libsm6 \
  					   libglu1-mesa \
@@ -15,12 +16,21 @@ RUN apt-get install -y --no-install-recommends libdbus-glib-1-2 \
 
 RUN add-apt-repository ppa:libreoffice/libreoffice-4-4
 
+=======
+RUN apt-get install -y software-properties-common 
+
+RUN add-apt-repository ppa:libreoffice/libreoffice-4-4
+>>>>>>> origin/master
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
     && add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get update
 
+<<<<<<< HEAD
 RUN apt-get -y -q install libreoffice 
+=======
+RUN apt-get -y -q install libreoffice
+>>>>>>> origin/master
 
 RUN apt-get install -y oracle-java8-installer \
     && update-java-alternatives -s java-8-oracle \
@@ -33,13 +43,21 @@ RUN apt-get install -y --no-install-recommends wget \
                                                   libsm6 \
  												  libglu1-mesa \
     				                              libxinerama1 libice6 libsm6 libxt6 libxrender1 libfontconfig1 \
+<<<<<<< HEAD
                                                   libcups2 software-properties-common python3-software-properties python-software-properties\
+=======
+                                                  libcups2 python3-software-properties \
+>>>>>>> origin/master
                                                   java-common  
 
 EXPOSE 8997 
 
 RUN adduser --home=/opt/libreoffice --disabled-password --gecos "" --shell=/bin/bash libreoffice
 
+<<<<<<< HEAD
+=======
+ADD fonts/* /usr/lib/libreoffice/share/fonts/truetype/ 
+>>>>>>> origin/master
 # replace default setup with a one disabling logos by default ADD sofficerc /etc/libreoffice/sofficerc
 ADD startoo.sh /opt/libreoffice/startoo.sh
 VOLUME ["/tmp"]

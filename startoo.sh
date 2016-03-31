@@ -1,3 +1,7 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 /usr/bin/libreoffice --nologo --norestore --invisible --headless --accept='socket,host=0,port=8997,tcpNoDelay=1;urp;'
+=======
+/usr/bin/libreoffice --nologo --norestore --invisible --headless --accept="socket,host=0,port=8997;urp;"
+>>>>>>> origin/master
